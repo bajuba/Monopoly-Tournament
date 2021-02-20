@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xGDPTPkOpFsaj5CnUdMDm5cJLf57H0JsZ2KnY7+h3Yis4P9dl8inAvljflSIPVlnfNQ5a8r6IwKt2F3COJ9zyA==",
+  "dgSpecHash": "Zfdwog+ALdlpBSE86YC1cQH5CGCwQ6wiCTopIzclH5eH5lgv83iQKHpXCrhLAbBrBJowocPDmhl2jvvVKNfXNg==",
   "success": true,
-  "projectFilePath": "/home/teichinger/Documents/Projects/Monopoly/Monopoly.csproj",
+  "projectFilePath": "/home/teichinger/Documents/Projects/Monopoly-Tournament/Monopoly.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

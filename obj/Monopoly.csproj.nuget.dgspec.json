@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/teichinger/Documents/Projects/Monopoly/Monopoly.csproj": {}
+    "/home/teichinger/Documents/Projects/Monopoly-Tournament/Monopoly.csproj": {}
   },
   "projects": {
-    "/home/teichinger/Documents/Projects/Monopoly/Monopoly.csproj": {
+    "/home/teichinger/Documents/Projects/Monopoly-Tournament/Monopoly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/teichinger/Documents/Projects/Monopoly/Monopoly.csproj",
+        "projectUniqueName": "/home/teichinger/Documents/Projects/Monopoly-Tournament/Monopoly.csproj",
         "projectName": "Monopoly",
-        "projectPath": "/home/teichinger/Documents/Projects/Monopoly/Monopoly.csproj",
+        "projectPath": "/home/teichinger/Documents/Projects/Monopoly-Tournament/Monopoly.csproj",
         "packagesPath": "/home/teichinger/.nuget/packages/",
-        "outputPath": "/home/teichinger/Documents/Projects/Monopoly/obj/",
+        "outputPath": "/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/teichinger/.nuget/NuGet/NuGet.Config"
