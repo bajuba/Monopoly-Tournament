@@ -23,13 +23,16 @@ namespace Monopoly
         public string City;
         public string State;
         public int MaxPlayers;
+        public List<Game> Games = new List<Game>();
+    }
 
-        // TODO Andy, this is your nested game class to code
-        // - Fill in the info for needed stored for each game
-        class Game 
-        {
+    // TODO Andy, this is your nested game class to code
+    // - Fill in the info for needed stored for each game
+    // - Should probably contain all data should on dropbox table plus hidden round value
+    // - and anything else you think needs to be added.
+    class Game 
+    {
 
-        }
     }
 
     // TODO Grace, this is your player class to code
