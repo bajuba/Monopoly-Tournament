@@ -65,6 +65,10 @@ namespace Monopoly
                 case "0":
                     return;
                     break;
+                 default:
+                    WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
+                    Intro();
+                    break;
             }
         }
 
@@ -93,6 +97,10 @@ namespace Monopoly
                     break;
                 case "0":
                     return;
+                    break;
+                default:
+                    WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
+                    TournamentOptions();
                     break;
             }
         }
