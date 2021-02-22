@@ -131,7 +131,37 @@ namespace Monopoly
             string tournState = ReadLine().ToLower();
 
             WriteLine("Please enter the maximum amount of players of the Tournament.\n");
-            string tournMax = ReadLine().ToLower();          
+            string tournMax = ReadLine().ToLower();
+            // Check if Tournament List has any values for assigning ID
+
+            // If classes already exist in list
+            // if (Tournaments[Tournaments.Count-1].ID != null)
+            // {
+            //     // Inserts new Tournament at ID number location - 1
+            //     Tournaments.Insert(Tournaments[Tournaments.Count-1].ID, new Tournament{
+            //     ID = Tournaments[Tournaments.Count-1].ID + 1,
+            //     Name = tournName,
+            //     Date = tournDate,
+            //     Address = tournAddress,
+            //     City = tournCity,
+            //     State = tournState,
+            //     MaxPlayers = Int32.Parse(tournMax)
+            //     });
+            // }
+
+            // // If classes do not exist in list already, starts assigning place and ID of 1 at List place of 0
+            // else
+            // {
+            //     Tournaments.Insert(0, new Tournament{
+            //     ID = 1,
+            //     Name = tournName,
+            //     Date = tournDate,
+            //     Address = tournAddress,
+            //     City = tournCity,
+            //     State = tournState,
+            //     MaxPlayers = Int32.Parse(tournMax)
+            //     });
+            // }  
         }
 
         public void RemoveTournament()
