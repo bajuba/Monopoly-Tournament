@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace Monopoly
 {
@@ -23,6 +24,8 @@ namespace Monopoly
         public string City;
         public string State;
         public int MaxPlayers;
+
+        // List of this tournament's games
         public List<Game> Games = new List<Game>();
     }
 
@@ -46,18 +49,22 @@ namespace Monopoly
 
         public void Intro()
         {
-            Console.WriteLine("Hello! Please enter the section of the application" +
-            " you would like to use. \nYour choices are below. \n\nTournament | Players\n");
+            WriteLine("Hello! Please enter section you would like to use:" +
+            " \n Enter 1 for Tournament Options \n Enter 2 for Player Options \n Enter 0 to Quit\n");
 
-            string menuSelect = Console.ReadLine().ToLower();
+            string menuSelect = ReadLine().ToLower();
             
-            if (menuSelect == "tournament")
+            switch (menuSelect)
             {
-                TournamentOptions();
-            }
-            else if (menuSelect == "players")
-            {
-                PlayersOptions();
+                case "1":
+                    TournamentOptions();
+                    break;
+                case "2":
+                    PlayersOptions();
+                    break;
+                case "0":
+                    return;
+                    break;
             }
         }
 
@@ -67,23 +74,26 @@ namespace Monopoly
 
         public void TournamentOptions()
         {
-            Console.WriteLine("Hello! Please enter the section of the application" +
-            " you would like to use. \nYour choices are below. \n\nAdd Tournament | Remove Tournament | Remove Tournament |" +
-            " Add Game\n");
+            WriteLine("Hello! Please enter the section of the application:" +
+            " \nEnter 1 to Add a Tournament \nEnter 2 to Remove a Tournament \nEnter 3 to Add a Game to a Tournament \n" + 
+            "Enter 0 to Quti");
 
-            string tournMenuSelect = Console.ReadLine().ToLower();
+            string tournMenuSelect = ReadLine().ToLower();
 
-            if (tournMenuSelect == "add tournament")
+            switch (tournMenuSelect)
             {
-                AddTournament();
-            }
-            else if (tournMenuSelect == "remove tournament")
-            {
-                RemoveTournament();
-            }
-            else if (tournMenuSelect == "add game")
-            {
-                AddGame();
+                case "1":
+                    AddTournament();
+                    break;
+                case "2":
+                    RemoveTournament();
+                    break;
+                case "3":
+                    AddGame();
+                    break;
+                case "0":
+                    return;
+                    break;
             }
         }
 
@@ -91,22 +101,39 @@ namespace Monopoly
 
         public void PlayersOptions()
         {
-            Console.WriteLine("\nPlayer Options\n");
+            WriteLine("\nPlayer Options\n");
         }
 
         public void AddTournament()
         {
-            Console.WriteLine("\nAdd Tournament");         
+            // Get the info for needed to start a tournament
+            WriteLine("Please enter the name of the Tournament.\n");
+            string tournName = ReadLine().ToLower();
+
+            WriteLine("Please enter the start date of the Tournament.\n");
+            string tournDate = ReadLine().ToLower();
+
+            WriteLine("Please enter the Address of the Tournament.\n");
+            string tournAddress = ReadLine().ToLower();
+
+            WriteLine("Please enter the city location of the Tournament.\n");
+            string tournCity = ReadLine().ToLower();
+
+            WriteLine("Please enter the state location of the Tournament. (Abbreviated)\n");
+            string tournState = ReadLine().ToLower();
+
+            WriteLine("Please enter the maximum amount of players of the Tournament.\n");
+            string tournMax = ReadLine().ToLower();          
         }
 
         public void RemoveTournament()
         {
-            Console.WriteLine("\nRemove Tournament");
+            WriteLine("\nRemove Tournament");
         }
 
         public void AddGame()
         {
-            Console.WriteLine("\nAdd Game");
+            WriteLine("\nAdd Game");
         }
     }
 }
