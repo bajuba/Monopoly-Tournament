@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using static System.Console;
+using Monopoly;
 
 namespace Monopoly
 {
@@ -9,45 +10,17 @@ namespace Monopoly
         static void Main(string[] args)
         {
             Menu menuInst = new Menu();
-            List<Tournament> Tournaments = new List<Tournament>();
-
-            menuInst.Intro();
+            Tournament tourneys = new Tournament();
+            
+            
+            menuInst.Intro(menuInst, tourneys);
         }
-    }
-
-    class Tournament
-    {
-        public int ID;
-        public string Name;
-        public string Date;
-        public string Address;
-        public string City;
-        public string State;
-        public int MaxPlayers;
-
-        // List of this tournament's games
-        public List<Game> Games = new List<Game>();
-    }
-
-    // TODO Andy, this is your nested game class to code
-    // - Fill in the info for needed stored for each game
-    // - Should probably contain all data should on dropbox table plus hidden round value
-    // - and anything else you think needs to be added.
-    class Game 
-    {
-
-    }
-
-    // TODO Grace, this is your player class to code
-    class Players
-    {
-
     }
 
     class Menu
     {
 
-        public void Intro()
+        public void Intro(Menu menuInst, Tournament tourneys)
         {
             WriteLine("Hello! Please enter section you would like to use:" +
             " \n Enter 1 for Tournament Options \n Enter 2 for Player Options \n Enter 0 to Quit\n");
@@ -57,17 +30,16 @@ namespace Monopoly
             switch (menuSelect)
             {
                 case "1":
-                    TournamentOptions();
+                    TournamentOptions(menuInst, tourneys);
                     break;
                 case "2":
                     PlayersOptions();
                     break;
                 case "0":
                     return;
-                    break;
                  default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    Intro();
+                    Intro(menuInst, tourneys);
                     break;
             }
         }
@@ -76,31 +48,31 @@ namespace Monopoly
         // - focus on making the features and methods that modify game class data and keep track of the games of each tourney
         // - I'll try and focus on the overall data for the tournaments themselves and stuff that modifies them
 
-        public void TournamentOptions()
+        public void TournamentOptions(Menu menuInst, Tournament tourneys)
         {
             WriteLine("Hello! Please enter the section of the application:" +
             " \nEnter 1 to Add a Tournament \nEnter 2 to Remove a Tournament \nEnter 3 to Add a Game to a Tournament \n" + 
-            "Enter 0 to Quti");
+            "Enter 0 to go back");
 
             string tournMenuSelect = ReadLine().ToLower();
 
             switch (tournMenuSelect)
             {
                 case "1":
-                    AddTournament();
+                    tourneys.AddTournament(menuInst, tourneys);
                     break;
                 case "2":
-                    RemoveTournament();
+                    tourneys.RemoveTournament(menuInst, tourneys);
                     break;
                 case "3":
                     AddGame();
                     break;
                 case "0":
-                    return;
+                    Intro(menuInst, tourneys);
                     break;
                 default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    TournamentOptions();
+                    TournamentOptions(menuInst, tourneys);
                     break;
             }
         }
@@ -112,62 +84,9 @@ namespace Monopoly
             WriteLine("\nPlayer Options\n");
         }
 
-        public void AddTournament()
-        {
-            // Get the info for needed to start a tournament
-            WriteLine("Please enter the name of the Tournament.\n");
-            string tournName = ReadLine().ToLower();
 
-            WriteLine("Please enter the start date of the Tournament.\n");
-            string tournDate = ReadLine().ToLower();
 
-            WriteLine("Please enter the Address of the Tournament.\n");
-            string tournAddress = ReadLine().ToLower();
 
-            WriteLine("Please enter the city location of the Tournament.\n");
-            string tournCity = ReadLine().ToLower();
-
-            WriteLine("Please enter the state location of the Tournament. (Abbreviated)\n");
-            string tournState = ReadLine().ToLower();
-
-            WriteLine("Please enter the maximum amount of players of the Tournament.\n");
-            string tournMax = ReadLine().ToLower();
-            // Check if Tournament List has any values for assigning ID
-
-            // If classes already exist in list
-            // if (Tournaments[Tournaments.Count-1].ID != null)
-            // {
-            //     // Inserts new Tournament at ID number location - 1
-            //     Tournaments.Insert(Tournaments[Tournaments.Count-1].ID, new Tournament{
-            //     ID = Tournaments[Tournaments.Count-1].ID + 1,
-            //     Name = tournName,
-            //     Date = tournDate,
-            //     Address = tournAddress,
-            //     City = tournCity,
-            //     State = tournState,
-            //     MaxPlayers = Int32.Parse(tournMax)
-            //     });
-            // }
-
-            // // If classes do not exist in list already, starts assigning place and ID of 1 at List place of 0
-            // else
-            // {
-            //     Tournaments.Insert(0, new Tournament{
-            //     ID = 1,
-            //     Name = tournName,
-            //     Date = tournDate,
-            //     Address = tournAddress,
-            //     City = tournCity,
-            //     State = tournState,
-            //     MaxPlayers = Int32.Parse(tournMax)
-            //     });
-            // }  
-        }
-
-        public void RemoveTournament()
-        {
-            WriteLine("\nRemove Tournament");
-        }
 
         public void AddGame()
         {
