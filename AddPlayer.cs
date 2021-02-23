@@ -13,18 +13,28 @@ class AddPlayer {
     WriteLine("Are you sure you want to add a new player? (y/n): ");
     whileAddConfirm = ReadLine();
 
-    while (whileAddConfirm != "n"){
+    if(whileAddConfirm != "y" && whileAddConfirm != "n"){
+      WriteLine("Please try again (y/n): ");
+      whileAddConfirm = ReadLine();
+    }
+    else if(whileAddConfirm == "y"){
+      while (whileAddConfirm != "n"){
       WriteLine("Insert player's full name: ");
       fullName = ReadLine();
       WriteLine("What is the player's preferred piece?: ");
       preferredPiece = ReadLine();
 
-      playerInfo = fullName + " " + preferredPiece; 
+      playerInfo = fullName + " : " + preferredPiece; 
       playersList.Add(playerInfo);
 
       WriteLine("Do you want to add another player? (y/n): ");
       whileAddConfirm = ReadLine();
+        }
+      }
+      WriteLine("Ok. Printing current players in list:");
+      WriteLine("-----------------------------");
+      foreach(var i in playersList){
+        WriteLine(i);
+      }
     }
-    WriteLine(playerInfo);
-  }
-}
+   }
