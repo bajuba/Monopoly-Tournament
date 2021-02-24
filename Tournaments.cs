@@ -84,12 +84,65 @@ namespace Monopoly
                 }
             }
 
-            WriteLine("\nThank you! Your Tournaments have been added!\n");
+            WriteLine("\nReturning to menu.\n");
             menuInst.Intro(menuInst, tourneys);
         }
 
         public void RemoveTournament(Menu menuInst, Tournament tourneys){
-            Console.WriteLine("\nRemove Tournament");
+            WriteLine("Would you like to remove a Tournament?" +
+            "\n Yes or No?");
+            string whileInput = ReadLine().ToLower();
+
+            if (whileInput != "yes" && whileInput != "no") {
+                AddTournament(menuInst, tourneys);
+            }
+
+            else if (whileInput == "yes"){
+                while (whileInput != "no") {
+                    if (whileInput == "yes"){
+                        WriteLine("\nHere is a list of all the tournaments on record.\n");
+                        foreach (var l in tournaments){
+                            WriteLine("Tournament: {0} | ID: {1}", l[1], l[0]);
+                        }
+
+                        WriteLine("\nPlease enter the ID number of the tournament you would like to delete.");
+                        string stringInput = ReadLine().ToLower();
+                        int q;
+                        if (!Int32.TryParse(stringInput, out q)){
+                            WriteLine("\n\n\n\n\n\n\n\n\nPlease enter a number.");
+                        }
+                        else if (q > tournaments.Count() || q < 1){
+                            WriteLine("\n\n\n\n\n\n\n\n\nPlease enter a valid tournament ID.");
+                        }
+                        else{
+                            int removeInput = Int32.Parse(stringInput);
+
+                            for (int i = 0; i < tournaments.Count(); i++){
+                                if (Int32.Parse(tournaments[i][0]) == removeInput) {
+                                    tournaments.RemoveAt(removeInput - 1);
+                                    for (int x = 0; x < tournaments.Count(); x++){
+                                        if (Int32.Parse(tournaments[x][0]) != x + 1){
+                                            tournaments[x][0] = (x + 1).ToString();
+                                        }
+                                    }
+                                }
+                            }
+
+                            WriteLine("\nWould you like to remove another tournament?" +
+                            "\n Yes or No?");
+                            whileInput = ReadLine().ToLower(); 
+                        }
+                    }
+                    else {
+                        WriteLine("\nPlease enter yes or no.");
+                        whileInput = ReadLine().ToLower();
+                    }
+
+                }
+            }
+
+            WriteLine("\n\n\n\n\nReturning to menu.\n");
+            menuInst.Intro(menuInst, tourneys);
         }
 
     }
