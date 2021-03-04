@@ -41,7 +41,7 @@ namespace PlayerOptions{
           Clear();
           WriteLine("Please try again: ");
           return true;
-          breakl
+          break;
       }
     }
   }
