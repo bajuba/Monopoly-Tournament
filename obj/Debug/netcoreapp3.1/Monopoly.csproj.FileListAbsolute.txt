@@ -11,3 +11,9 @@
 /home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.dll
 /home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.pdb
 /home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.genruntimeconfig.cache
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.csprojAssemblyReference.cache
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.AssemblyInfoInputs.cache
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.AssemblyInfo.cs
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.csproj.CoreCompileInputs.cache
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.dll
+/home/chammond12003/Documents/Monopoly/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly.pdb
