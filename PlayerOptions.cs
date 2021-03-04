@@ -60,6 +60,7 @@ namespace PlayerOptions{
       List <string> playerPieces = new List<string>;
       
     }
+    //These Methods will utilize the playerInfo.csv file.
     private static void AddPlayer(){
 
     }
