@@ -1,0 +1,13 @@
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.csprojAssemblyReference.cache
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.AssemblyInfoInputs.cache
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.AssemblyInfo.cs
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.csproj.CoreCompileInputs.cache
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament.deps.json
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament.runtimeconfig.json
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament.runtimeconfig.dev.json
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament.dll
+/home/teichinger/Documents/Projects/Monopoly-Tournament/bin/Debug/netcoreapp3.1/Monopoly-Tournament.pdb
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.dll
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.pdb
+/home/teichinger/Documents/Projects/Monopoly-Tournament/obj/Debug/netcoreapp3.1/Monopoly-Tournament.genruntimeconfig.cache

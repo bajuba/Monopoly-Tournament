@@ -4,71 +4,37 @@ using static System.Console;
 using System.Linq;
 using System.IO;
 
-namespace PlayerOptions{
-  class PlayerClass {
-    string optionSelect;
+namespace PlayerClass{
 
-    public static void Main () {
-      WriteLine("Welcome to Player Options");
-      WriteLine("-------------------------");
-      WriteLine("Enter 1 to add players.");
-      WriteLine("Enter 2 to remove players.");
-      WriteLine("Enter 3 to edit a player(s).");
-      WriteLine("Enter 4 to return to menu.")
-      WriteLine("-------------------------");
-      WriteLine("Type here: ");
-      optionSelect = ReadLine();
+  public class PlayerClass{
+    public string Name {get;set;}
+    public int ID {get;set;}
+    public string JoinDate {get;set;}
+    public string BirthDate {get;set;}
+    public string State {get;set;}
+    public List<string> Pieces = new List<string>(){get;set;}
+    public int JailRank {get;set;}
 
-      switch(optionSelect){
-        case "1":
-          AddPlayer();
-          return true;
-          break;
-        case "2":
-          RemovePlayer();
-          return true;
-          break;
-        case "3":
-          EditPlayer();
-          return true;
-          break;
-        case "4":
-          Clear();
-          Main();
-          return true;
-          break;
-        default:
-          Clear();
-          WriteLine("Please try again: ");
-          return true;
-          break;
-      }
+    public PlayerClass(string name, int id, string joinDate, string birthDate, string state, List<string> pieces, int jailRank){
+      Name = name;
+      ID = id;
+      JoinDate = joinDate;
+      BirthDate = birthDate;
+      State = state;
+      Pieces = pieces;
+      JailRank = jailRank;
     }
-  }
 
-  class PlayerList{
-    public static void ListCommands(){
-      List <string> playersList = new List<string>;
-      string playerSurname;
-      string playerFirstMidName;
-      int playerID;
-      string playerBirthdate;
-      string dateJoined;
-      string playerTown;
-      string playerState;
-      //Player pieces will be a list, 0-7
-      List <string> playerPieces = new List<string>;
-      
-    }
-    //These Methods will utilize the playerInfo.csv file.
-    private static void AddPlayer(){
-
-    }
-    private static void DeletePlayer(){
-
-    }
-    private static void EditPlayer(){
-
+    public override string ToString(){
+      string output = "";
+      output += ($"Name : {Name}\n");
+      output += ($"ID : {ID}\n");
+      output += ($"JoinDate : {JoinDate}\n");
+      output += ($"BirthDate : {BirthDate}\n");
+      output += ($"State : {State}\n");
+      output += ($"Pieces : {Pieces}\n");
+      output += ($"Jail ank : {JailRank}");
+      return output;
     }
   }
 }
