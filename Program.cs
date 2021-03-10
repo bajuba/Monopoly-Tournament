@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using static System.Console;
 using Monopoly;
@@ -13,27 +14,27 @@ namespace Monopoly
 
             PlayerClass newPlayer;
 
-            using(StreamReader reader = new StreamReader(@"playerinfo.csv")){
+            using(StreamReader reader = new StreamReader(@"playerInfo.csv")){
                 while (!reader.EndOfStream){
           
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
-                    newPlayer = new PlayerClass(values[0],values[1], value[2], value[3], value[4], value[5], value[6][0], value[6][1],
-                    value[6][2], value[6][3], value[6][4], value[6][5], value[6][6], value[6][7]);
+                    newPlayer = new PlayerClass(values[0],values[1], values[2], values[3], values[4], values[5], "0", values[6], values[7],
+                    values[8], values[9], values[10], values[11], values[12], values[13]);
           
                     PlayerList.Players.Add(newPlayer);
                     }
                 }
             
             
-            menuInst.Intro();
+            menuInst.Intro(menuInst);
         }
     }
 
     public class Menu
     {
 
-        public void Intro()
+        public void Intro(Menu menuInst)
         {
             WriteLine("Hello! Please enter section you would like to use:" +
             " \n Enter 1 for Tournament Options \n Enter 2 for Player Options \n Enter 0 to Quit\n");
@@ -45,13 +46,13 @@ namespace Monopoly
                 case "1":
                     break;
                 case "2":
-                    PlayersOptions();
+                    PlayersOptions(menuInst);
                     break;
                 case "0":
                     return;
                  default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    Intro();
+                    Intro(menuInst);
                     break;
             }
         }
@@ -60,7 +61,7 @@ namespace Monopoly
         // - focus on making the features and methods that modify game class data and keep track of the games of each tourney
         // - I'll try and focus on the overall data for the tournaments themselves and stuff that modifies them
 
-        public void TournamentOptions()
+        public void TournamentOptions(Menu menuInst)
         {
             WriteLine("Hello! Please enter the section of the application:" +
             " \nEnter 1 to Add a Player \nEnter 2 to Remove a Player \nEnter 3 to edit player Info \nEnter 4 list all players info\n" + 
@@ -83,18 +84,18 @@ namespace Monopoly
                     
                     break;
                 case "0":
-                    Intro();
+                    Intro(menuInst);
                     break;
                 default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    TournamentOptions();
+                    TournamentOptions(menuInst);
                     break;
             }
         }
 
         // TODO Grace, this is your menu to code
 
-        public void PlayersOptions()
+        public void PlayersOptions(Menu menuInst)
         {
             WriteLine("Hello! Please enter the section of the application:" +
             " \nEnter 1 to Add a Tournament \nEnter 2 to Remove a Tournament \nEnter 3 to Add a Game to a Tournament \n" + 
@@ -111,14 +112,14 @@ namespace Monopoly
                     
                     break;
                 case "3":
-                    AddGame();
+                    PlayerList.AddPlayer(menuInst);
                     break;
                 case "0":
-                    Intro();
+                    Intro(menuInst);
                     break;
                 default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    PlayerOptions();
+                    PlayersOptions(menuInst);
                     break;
             }
         }
