@@ -8,6 +8,28 @@ namespace Monopoly{
   public static class PlayerList {
     public static List<PlayerClass> Players = new List<PlayerClass>();
 
+    public static void ViewPlayers(Menu menuInst)
+    {
+      WriteLine("Would you like to view all Players?" +
+      "\n Yes or No?");
+      string whileInput = ReadLine().ToLower();
+
+      if (whileInput != "yes" && whileInput != "no") {
+          ViewPlayers(menuInst);
+      }
+
+      else if (whileInput == "yes"){
+          foreach (var player in Players) {
+            WriteLine("Name: " + player.Name + " | ID: " + player.ID + " | Goojf Rank: " + 0);
+            
+            WriteLine("\n");
+          }
+      }
+
+      WriteLine("\nReturning to menu.\n");
+      menuInst.Intro(menuInst);
+    }
+
     public static void AddPlayer(Menu menuInst)
     {
       WriteLine("Would you like to add a new Player?" +
@@ -27,8 +49,8 @@ namespace Monopoly{
                       id = 1;
                   }
                   else  {
-                      var lastList = Int32.Parse(Players);
-                      id = lastList + 1;
+                       var lastList = Int32.Parse(Players.Last().ID);
+                       id = lastList + 1;
                   }
 
                   WriteLine("\nPlease enter the name of the Player.");

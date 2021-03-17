@@ -19,8 +19,8 @@ namespace Monopoly
           
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
-                    newPlayer = new PlayerClass(values[0],values[1], values[2], values[3], values[4], values[5], "0", values[6], values[7],
-                    values[8], values[9], values[10], values[11], values[12], values[13]);
+                    newPlayer = new PlayerClass(values[0] + values[1], values[2], values[3], values[4], values[5], "0", values[6], values[7],
+                    values[8], values[9], values[10], values[11], values[12], values[13], values[14]);
           
                     PlayerList.Players.Add(newPlayer);
                     }
@@ -98,7 +98,7 @@ namespace Monopoly
         public void PlayersOptions(Menu menuInst)
         {
             WriteLine("Hello! Please enter the section of the application:" +
-            " \nEnter 1 to Add a Tournament \nEnter 2 to Remove a Tournament \nEnter 3 to Add a Game to a Tournament \n" + 
+            " \nEnter 1 to Nothing \nEnter 2 to See All Players \nEnter 3 to Add a Player \n" + 
             "Enter 0 to go back");
 
             string tournMenuSelect = ReadLine().ToLower();
@@ -109,7 +109,7 @@ namespace Monopoly
                     
                     break;
                 case "2":
-                    
+                    PlayerList.ViewPlayers(menuInst);
                     break;
                 case "3":
                     PlayerList.AddPlayer(menuInst);
