@@ -19,7 +19,7 @@ namespace Monopoly
           
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
-                    newPlayer = new PlayerClass(values[0] + values[1], values[2], values[3], values[4], values[5], "0", values[6], values[7],
+                    newPlayer = new PlayerClass(values[1].Remove(values[1].Length - 1), values[0].Remove(0,1), values[2], values[3], values[4], values[5], "0", values[6], values[7],
                     values[8], values[9], values[10], values[11], values[12], values[13], values[14]);
           
                     PlayerList.Players.Add(newPlayer);

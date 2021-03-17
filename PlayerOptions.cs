@@ -7,7 +7,8 @@ using System.IO;
 namespace Monopoly{
 
   public class PlayerClass{
-    public string Name {get;set;}
+    public string NameFirst {get;set;}
+    public string NameLast {get;set;}
     public string ID {get;set;}
     public string JoinDate {get;set;}
     public string BirthDate {get;set;}
@@ -23,9 +24,10 @@ namespace Monopoly{
     public string Piece7 {get;set;}
     public string Piece8 {get;set;}
 
-    public PlayerClass(string name, string id, string joinDate, string birthDate, string homeTown, string state, string jailRank, string piece1, string piece2, string piece3,
+    public PlayerClass(string nameFirst, string nameLast, string id, string joinDate, string birthDate, string homeTown, string state, string jailRank, string piece1, string piece2, string piece3,
     string piece4, string piece5, string piece6, string piece7, string piece8){
-      Name = name;
+      NameFirst = nameFirst;
+      NameLast = nameLast;
       ID = id;
       JoinDate = joinDate;
       BirthDate = birthDate;
@@ -44,7 +46,8 @@ namespace Monopoly{
 
     public override string ToString(){
       string output = "";
-      output += ($"Name : {Name}\n");
+      output += ($"NameFirst : {NameFirst}\n");
+      output += ($"NameLast : {NameLast}\n");
       output += ($"ID : {ID}\n");
       output += ($"JoinDate : {JoinDate}\n");
       output += ($"BirthDate : {BirthDate}\n");

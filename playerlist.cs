@@ -20,7 +20,7 @@ namespace Monopoly{
 
       else if (whileInput == "yes"){
           foreach (var player in Players) {
-            WriteLine("Name: " + player.Name + " | ID: " + player.ID + " | Goojf Rank: " + 0);
+            WriteLine("Name: " + player.NameFirst + " " + player.NameLast + " | ID: " + player.ID + " | Goojf Rank: " + 0);
             
             WriteLine("\n");
           }
@@ -53,8 +53,11 @@ namespace Monopoly{
                        id = lastList + 1;
                   }
 
-                  WriteLine("\nPlease enter the name of the Player.");
-                  string playerName = ReadLine().ToLower();
+                  WriteLine("\nPlease enter the first name of the Player.");
+                  string playerNameFirst = ReadLine().ToLower();
+
+                  WriteLine("\nPlease enter the middle initial & last name of the Player.");
+                  string playerNameLast = ReadLine().ToLower();
 
                   // Get Todays Date
                   DateTime joinDate = DateTime.Today;
@@ -104,7 +107,7 @@ namespace Monopoly{
                   string piece8 = ReadLine().ToLower();
 
                   // Add tournament list to tournaments list
-                  PlayerClass addPlayer = new PlayerClass(playerName, id.ToString(), joinDate.ToString("d-MMM-yyyy"), playerBirth, playerTown,
+                  PlayerClass addPlayer = new PlayerClass(playerNameFirst, playerNameLast, id.ToString(), joinDate.ToString("d-MMM-yyyy"), playerBirth, playerTown,
                   playerState, goojfRank, piece1, piece2, piece3, piece4, piece5, piece6, piece7, piece8);
                   PlayerList.Players.Add(addPlayer);
 
@@ -118,7 +121,7 @@ namespace Monopoly{
               }
           }
           foreach (var player in Players) {
-            WriteLine(player.Name);
+            WriteLine(player.NameFirst + player.NameLast);
             
             WriteLine("\n");
           }
