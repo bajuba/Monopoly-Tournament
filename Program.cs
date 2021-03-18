@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using static System.Console;
 using Monopoly;
+using System.Linq;
 
 namespace Monopoly
 {
@@ -10,17 +11,20 @@ namespace Monopoly
         static void Main(string[] args)
         {
             Menu menuInst = new Menu();
-            Tournament tourneys = new Tournament();
+            /*Tournament tourneys = new Tournament();*/
+
+            //get tournament data if the tournament list is empty
+            if (!TournamentList.Tournaments.Any()){
+                    GetTournamentData.GetData();
+                }
             
-            
-            menuInst.Intro(menuInst, tourneys);
+            menuInst.Intro(menuInst/*, tourneys*/);
         }
     }
 
-    class Menu
+    public class Menu
     {
-
-        public void Intro(Menu menuInst, Tournament tourneys)
+        public void Intro(Menu menuInst/*, Tournament tourneys*/)
         {
             WriteLine("Hello! Please enter section you would like to use:" +
             " \n Enter 1 for Tournament Options \n Enter 2 for Player Options \n Enter 0 to Quit\n");
@@ -30,7 +34,8 @@ namespace Monopoly
             switch (menuSelect)
             {
                 case "1":
-                    TournamentOptions(menuInst, tourneys);
+                    /*TournamentOptions(menuInst, tourneys);*/
+                    ViewTournament.View();
                     break;
                 case "2":
                     PlayersOptions();
@@ -39,7 +44,7 @@ namespace Monopoly
                     return;
                  default:
                     WriteLine("\nI'm sorry that is not an option, please try again.\n\n");
-                    Intro(menuInst, tourneys);
+                    Intro(menuInst/*, tourneys*/);
                     break;
             }
         }
@@ -48,7 +53,7 @@ namespace Monopoly
         // - focus on making the features and methods that modify game class data and keep track of the games of each tourney
         // - I'll try and focus on the overall data for the tournaments themselves and stuff that modifies them
 
-        public void TournamentOptions(Menu menuInst, Tournament tourneys)
+        /*public void TournamentOptions(Menu menuInst, Tournament tourneys)
         {
             WriteLine("Hello! Please enter the section of the application:" +
             " \nEnter 1 to Add a Tournament \nEnter 2 to Remove a Tournament \nEnter 3 to Add a Game to a Tournament \n" + 
@@ -75,7 +80,7 @@ namespace Monopoly
                     TournamentOptions(menuInst, tourneys);
                     break;
             }
-        }
+        }*/
 
         // TODO Grace, this is your menu to code
 
@@ -84,14 +89,9 @@ namespace Monopoly
             WriteLine("\nPlayer Options\n");
         }
 
-
-
-
-
         public void AddGame()
         {
             WriteLine("\nAdd Game");
         }
     }
 }
-

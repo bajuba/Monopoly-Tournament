@@ -2,8 +2,11 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Monopoly{
-  public static class TournamentList {
+namespace Monopoly
+{
+  //contains the list of tournaments
+  public static class TournamentList
+  {
     public static List<Tournament> Tournaments = new List<Tournament>();
   }
 
