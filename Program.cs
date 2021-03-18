@@ -10,10 +10,14 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
+            // Menu Instance
             Menu menuInst = new Menu();
 
+            // Player Class Instance
             PlayerClass newPlayer;
 
+            // Player CSV Reader, feel free to move to external document reader method is you want Grace or Randy,
+            // Also Richard feel free to make your tournament CSV in an external sheet also.
             using(StreamReader reader = new StreamReader(@"playerInfo.csv")){
                 while (!reader.EndOfStream){
           
@@ -33,10 +37,10 @@ namespace Monopoly
 
     public class Menu
     {
-
+        // Main Menu
         public void Intro(Menu menuInst)
         {
-            WriteLine("Hello! Please enter section you would like to use:" +
+            WriteLine("\n\nHello! Please enter section you would like to use:" +
             " \n Enter 1 for Tournament Options \n Enter 2 for Player Options \n Enter 0 to Quit\n");
 
             string menuSelect = ReadLine().ToLower();
@@ -44,6 +48,7 @@ namespace Monopoly
             switch (menuSelect)
             {
                 case "1":
+                    TournamentOptions(menuInst);
                     break;
                 case "2":
                     PlayersOptions(menuInst);
@@ -57,31 +62,28 @@ namespace Monopoly
             }
         }
 
-        // TODO Andy, this is our feature menu here, we will code this menu while Grace codes the player one
-        // - focus on making the features and methods that modify game class data and keep track of the games of each tourney
-        // - I'll try and focus on the overall data for the tournaments themselves and stuff that modifies them
-
+        // Richard here's you're menu to code in. Change it as you see fit. So far every option takes you back to the main menu.
+        // Tournament Options Menu
         public void TournamentOptions(Menu menuInst)
         {
-            WriteLine("Hello! Please enter the section of the application:" +
-            " \nEnter 1 to Add a Player \nEnter 2 to Remove a Player \nEnter 3 to edit player Info \nEnter 4 list all players info\n" + 
-            "Enter 0 to go back");
+            WriteLine("\n\nHello! Please enter the section of the application:" +
+            " \nEnter 0 to go back");
 
             string tournMenuSelect = ReadLine().ToLower();
 
             switch (tournMenuSelect)
             {
                 case "1":
-                    
+                    Intro(menuInst);
                     break;
                 case "2":
-                    
+                    Intro(menuInst);
                     break;
                 case "3":
-                    
+                    Intro(menuInst);
                     break;
                 case "4":
-                    
+                    Intro(menuInst);
                     break;
                 case "0":
                     Intro(menuInst);
@@ -93,12 +95,13 @@ namespace Monopoly
             }
         }
 
-        // TODO Grace, this is your menu to code
-
+        // TODO Grace & Randy, this is your menu to code in feel fre to change it as you progress. Unimplemented options will
+        // just return you to the main menu.
+        // Player Options Menu
         public void PlayersOptions(Menu menuInst)
         {
-            WriteLine("Hello! Please enter the section of the application:" +
-            " \nEnter 1 to Nothing \nEnter 2 to See All Players \nEnter 3 to Add a Player \n" + 
+            WriteLine("\n\nHello! Please enter the section of the application:" +
+            " \nEnter 1 to Nothing \nEnter 2 to See All Players \nEnter 3 to Nothing (Add Players) \n" + 
             "Enter 0 to go back");
 
             string tournMenuSelect = ReadLine().ToLower();
@@ -106,7 +109,7 @@ namespace Monopoly
             switch (tournMenuSelect)
             {
                 case "1":
-                    
+                    Intro(menuInst);
                     break;
                 case "2":
                     PlayerList.ViewPlayers(menuInst);
@@ -126,7 +129,7 @@ namespace Monopoly
 
 
 
-
+        // Richard, this will be the sub menu for adding/modifying the game data later on. Feel free to move or Edit it as you go.
 
         public void AddGame()
         {
